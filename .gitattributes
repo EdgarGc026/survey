@@ -1,0 +1,19 @@
+# Finales de línea LF en todo el repo: los scripts (gradlew, Docker, CI)
+# corren en Linux aunque se editen en Windows.
+* text=auto eol=lf
+
+# Scripts de Windows con CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binarios: Git no debe tocarlos
+*.jar   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.xlsx  binary
+*.woff  binary
+*.woff2 binary
