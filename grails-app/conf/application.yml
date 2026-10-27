@@ -1,0 +1,41 @@
+info:
+  app:
+    name: '@info.app.name@'
+    version: '@info.app.version@'
+    grailsVersion: '@info.app.grailsVersion@'
+spring:
+  config:
+    import: optional:file:.env[.properties]
+dataSource:
+  driverClassName: org.postgresql.Driver
+  username: ${DB_USER:survey}
+  password: ${DB_PASSWORD:}
+  pooled: true
+  jmxExport: true
+environments:
+  development:
+    dataSource:
+      dbCreate: none
+      url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:survey}?tcpKeepAlive=true
+  test:
+    dataSource:
+      dbCreate: update
+      url: jdbc:postgresql://localhost:5432/testDb?tcpKeepAlive=true
+  production:
+    dataSource:
+      dbCreate: none
+      url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:survey}?tcpKeepAlive=true
+hibernate:
+  cache:
+    queries: false
+    use_second_level_cache: false
+    use_query_cache: false
+grails:
+  views:
+    gsp:
+      encoding: UTF-8
+      codecs:
+        scriptlet: html
+  codegen:
+    defaultPackage: survey
+  profile: web
