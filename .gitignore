@@ -36,3 +36,22 @@ backups/
 
 # ---- Node (solo para instalar AI Blueprint) ----
 node_modules/
+
+# ---- Grails / STS / NetBeans ----
+!**/src/main/**/build/
+!**/src/test/**/build/
+!**/src/integration-test/**/build/
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+!**/src/integration-test/**/bin/
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+target/
+
+# ---- Local Ai/tools
+.atl/
+.claude/settings.local.json
+blueprint/.state/
